@@ -34,13 +34,14 @@ function playRound(playerSelection, computerSelection) {
     while (true) {
         if (playerScore === 3) {
             console.log('Congragulations, you won!!!');
+            console.log('Total number of games: ' + --gameCounter);
             console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
             break;
         }
 
         else if (computerScore === 3) {
             console.log('Awww... better luck next time!');
-            console.log('Total number of games:' + gameCounter);
+            console.log('Total number of games: ' + --gameCounter);
             console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
             break;
         }
@@ -49,7 +50,6 @@ function playRound(playerSelection, computerSelection) {
             if(gameCounter > 1){
                 computerSelection = getComputerChoice();
                 playerSelection = getPlayerChoice();
-                gameCounter++;
                 console.log('==========================================================================');
                 console.log('Round Number: ' + gameCounter);
             }
@@ -140,9 +140,7 @@ function playRound(playerSelection, computerSelection) {
                 break;
 
             }
-            if(gameCounter === 1){//one time prompt to trigger the if block above for the remaining games
-                gameCounter++;
-            }
+            gameCounter++;
         }
     }
 }
