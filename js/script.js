@@ -61,6 +61,22 @@ function playRound(playerSelection, computerSelection){
             break;
         }
         break;
+
+        case('scissors'):
+        switch(computerSelection){
+            case('scissors'):
+            console.log(`It's a draw!`);
+            break;
+
+            case('paper'):
+            console.log('You win!');
+            break;
+
+            case('rock'):
+            console.log('You lose!');
+            break;
+        }
+        break;
     }
 
 }
