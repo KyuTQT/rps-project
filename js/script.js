@@ -47,12 +47,63 @@ function gameCounterIncrementor(gameCounter){
     }
 }
 
+function playerRockOptionResult(computerSelection){//possible results for the player picking rock
+    switch (computerSelection) {
+        case ('scissors'):
+            console.log('You win!');
+            return 1;
+
+        case ('paper'):
+            console.log('You lose!');
+            return 2;
+
+        case ('rock'):
+            console.log(`It's a draw!`);
+            return 0;
+    }
+}
+
+function playerPaperResultOption(computerSelection){//possible results for the player picking paper
+    switch (computerSelection) {
+        case ('scissors'):
+            console.log('You lose!');
+            return 2;
+
+        case ('paper'):
+            console.log(`It's a draw!`);
+            return 0;
+
+        case ('rock'):
+            console.log('You win!');
+            return 1;
+    }
+}
+
+function playerScissorsResultOption(computerSelection){//possible results for the player picking scissors
+    switch (computerSelection) {
+        case ('scissors'):
+            console.log(`It's a draw!`);
+            return 0;
+
+
+        case ('paper'):
+            console.log('You win!');
+            return 1;
+
+
+        case ('rock'):
+            console.log('You lose!');
+            return 2;
+    }
+}
+
 function playRound(playerSelection = ' ', computerSelection = ' ') {
     console.log('==========================================================================');
     console.log("Play rock paper scissors against the totally fair computer!\nFirst to three wins!");
     let playerScore = 0;
     let computerScore = 0;
     let gameCounter = 1;
+    let didPlayerWin = 0;
 
     while (true) {
         if (playerScore === 3 || computerScore === 3) {
@@ -65,92 +116,32 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
             computerSelection = getComputerChoice();
             playerSelection = getPlayerChoice();
             
-            //rock three conditions (win, lose, and draw)
+            
             switch (playerSelection) {
                 case ('rock'):
-                    switch (computerSelection) {
-                        case ('scissors'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            playerScore++;
-                            console.log('You win!');
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-
-                        case ('paper'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            computerScore++;
-                            console.log('You lose!');
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-
-                        case ('rock'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            console.log(`It's a draw!`);
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-                    }
+                    didPlayerWin = playerRockOptionResult(computerSelection);
                 break;
 
-                //paper three conditions (win, lose, and draw)
                 case ('paper'):
-                    switch (computerSelection) {
-                        case ('scissors'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            computerScore++;
-                            console.log('You lose!');
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-
-                        case ('paper'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            console.log(`It's a draw!`);
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-
-                        case ('rock'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            playerScore++;
-                            console.log('You win!');
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-                    }
+                    didPlayerWin = playerPaperResultOption(computerSelection);
                 break;
 
-                //scissors three conditions (win, lose, and draw)
                 case ('scissors'):
-                    switch (computerSelection) {
-                        case ('scissors'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            console.log(`It's a draw!`);
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-
-                        case ('paper'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            playerScore++;
-                            console.log('You win!');
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-
-                        case ('rock'):
-                            console.log('You chose: ' + playerSelection);
-                            console.log('The computer chose: ' + computerSelection);
-                            computerScore++;
-                            console.log('You lose!');
-                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-                            break;
-                    }
+                    didPlayerWin = playerScissorsResultOption(computerSelection);
                 break;
-
             }
+
+            if(didPlayerWin === 0){}
+            else if(didPlayerWin === 1){
+                playerScore++;
+            }
+            else{
+                computerScore++;
+            }
+
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
+            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
         }
     }
 }
@@ -158,7 +149,7 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
 playRound();
 
 while (confirm('Play again?') === true){
-    playRound(getPlayerChoice(), getComputerChoice());
+    playRound();
 }
 
 console.log("Thank you for playing and enjoy your day!");
