@@ -20,13 +20,7 @@ function getPlayerChoice(){
         playerChoice = prompt(`Please select one of the following: 'rock', 'paper', or 'scissors'?`, ' ');
         playerChoice = playerChoice.toLowerCase();
 
-        if (playerChoice === 'rock'){
-            return playerChoice;
-        }
-        else if (playerChoice === 'paper'){
-            return playerChoice;
-        }
-        else if (playerChoice === 'scissors'){
+        if (playerChoice === 'rock' || playerChoice === 'paper'|| playerChoice === 'scissors'){
             return playerChoice;
         }
     }
