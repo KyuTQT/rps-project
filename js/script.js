@@ -27,52 +27,71 @@ function getPlayerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-    console.log (computerSelection);
     //rock three conditions (win, lose, and draw)
     switch(playerSelection){
         case('rock'):
         switch(computerSelection){
             case('scissors'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log('You win!');
             break;
 
             case('paper'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log('You lose!');
             break;
 
             case('rock'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log(`It's a draw!`);
             break;
         }
         break;
 
+        //paper three conditions (win, lose, and draw)
         case('paper'):
         switch(computerSelection){
             case('scissors'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log('You lose!');
             break;
 
             case('paper'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log(`It's a draw!`);
             break;
 
             case('rock'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log('You win!');
             break;
         }
         break;
 
+        //scissors three conditions (win, lose, and draw)
         case('scissors'):
         switch(computerSelection){
             case('scissors'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log(`It's a draw!`);
             break;
 
             case('paper'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log('You win!');
             break;
 
             case('rock'):
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
             console.log('You lose!');
             break;
         }
