@@ -148,3 +148,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 playRound(getPlayerChoice(), getComputerChoice());
+
+while (confirm('Play again?') === true){
+    playRound(getPlayerChoice(), getComputerChoice());
+}
+
+console.log("Thank you for playing and enjoy your day!");
