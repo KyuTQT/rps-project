@@ -69,7 +69,6 @@ function playRound(playerSelection, computerSelection) {
                             console.log('You chose: ' + playerSelection);
                             console.log('The computer chose: ' + computerSelection);
                             console.log(`It's a draw!`);
-                            i--;
                             console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
                             break;
                     }
@@ -90,7 +89,6 @@ function playRound(playerSelection, computerSelection) {
                             console.log('You chose: ' + playerSelection);
                             console.log('The computer chose: ' + computerSelection);
                             console.log(`It's a draw!`);
-                            i--;
                             console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
                             break;
 
@@ -111,7 +109,6 @@ function playRound(playerSelection, computerSelection) {
                             console.log('You chose: ' + playerSelection);
                             console.log('The computer chose: ' + computerSelection);
                             console.log(`It's a draw!`);
-                            i--;
                             console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
                             break;
 
