@@ -15,7 +15,20 @@ function getComputerChoice () {
 }
 
 function getPlayerChoice(){
-    let x = prompt(`Please select one of the following: 'rock', 'paper', or 'scissors'?`, ' ');
-    console.log(x);
+    let playerChoice;
+    while (true){
+        playerChoice = prompt(`Please select one of the following: 'rock', 'paper', or 'scissors'?`, ' ');
+        playerChoice = playerChoice.toLowerCase();
+
+        if (playerChoice === 'rock'){
+            return playerChoice;
+        }
+        else if (playerChoice === 'paper'){
+            return playerChoice;
+        }
+        else if (playerChoice === 'scissors'){
+            return playerChoice;
+        }
+    }
 }
-getPlayerChoice();
+console.log(getPlayerChoice());
