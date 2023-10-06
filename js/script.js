@@ -26,6 +26,7 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    console.log('==========================================================================');
     console.log("Play rock paper scissors against the totally fair computer!\n First to three wins!");
     let playerScore = 0;
     let computerScore = 0;
