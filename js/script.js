@@ -25,27 +25,28 @@ function getPlayerChoice() {
     }
 }
 
+function endGameResult(playerScore, computerScore, gameCounter){
+    console.log('==========================================================================');
+    if(playerScore === 3){
+        console.log('Congragulations, you won!!!');
+    }
+    else{
+        console.log('Awww... better luck next time!');
+    }
+    console.log('Total number of games: ' + --gameCounter);
+    console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
+}
+
 function playRound(playerSelection, computerSelection) {
     console.log('==========================================================================');
-    console.log("Play rock paper scissors against the totally fair computer!\n First to three wins!");
+    console.log("Play rock paper scissors against the totally fair computer!\nFirst to three wins!");
     let playerScore = 0;
     let computerScore = 0;
     let gameCounter = 1;
 
     while (true) {
-        if (playerScore === 3) {
-            console.log('==========================================================================');
-            console.log('Congragulations, you won!!!');
-            console.log('Total number of games: ' + --gameCounter);
-            console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-            break;
-        }
-
-        else if (computerScore === 3) {
-            console.log('==========================================================================');
-            console.log('Awww... better luck next time!');
-            console.log('Total number of games: ' + --gameCounter);
-            console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
+        if (playerScore === 3 || computerScore === 3) {
+            endGameResult(playerScore, computerScore, gameCounter);
             break;
         }
 
