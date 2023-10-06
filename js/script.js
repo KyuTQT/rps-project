@@ -42,7 +42,25 @@ function playRound(playerSelection, computerSelection){
 
             case('rock'):
             console.log(`It's a draw!`);
+            break;
         }
+        break;
+
+        case('paper'):
+        switch(computerSelection){
+            case('scissors'):
+            console.log('You lose!');
+            break;
+
+            case('paper'):
+            console.log(`It's a draw!`);
+            break;
+
+            case('rock'):
+            console.log('You win!');
+            break;
+        }
+        break;
     }
 
 }
