@@ -1,6 +1,5 @@
 function getComputerChoice() {
     let rpsChoice = Math.floor(Math.random() * 3) + 1;
-    console.log(rpsChoice);
 
     if (rpsChoice === 1) {
         return 'rock';
@@ -30,18 +29,22 @@ function playRound(playerSelection, computerSelection) {
     console.log("Play rock paper scissors against the totally fair computer!\n First to three wins!");
     let playerScore = 0;
     let computerScore = 0;
+    let gameCounter = 1;
 
-    for (i = 1; i != 5; i++) {
+    while (true) {
         if (playerScore === 3) {
             console.log('Congragulations, you won!!!');
+            console.log('Final Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
             break;
         }
         else if (computerScore === 3) {
             console.log('Awww... better luck next time!');
+            console.log('Final Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
             break;
         }
 
         else {
+            console.log('Round Number: ' + gameCounter);
             //rock three conditions (win, lose, and draw)
             switch (playerSelection) {
                 case ('rock'):
@@ -132,6 +135,7 @@ function playRound(playerSelection, computerSelection) {
             }
             computerSelection = getComputerChoice();
             playerSelection = getPlayerChoice();
+            gameCounter++;
         }
     }
 }
