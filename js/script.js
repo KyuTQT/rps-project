@@ -136,6 +136,7 @@ function playRound(playerSelection, computerSelection) {
             computerSelection = getComputerChoice();
             playerSelection = getPlayerChoice();
             gameCounter++;
+            console.log('==========================================================================');
         }
     }
 }
