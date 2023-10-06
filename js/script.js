@@ -40,10 +40,10 @@ function endGameResult(playerScore, computerScore, gameCounter){
 function gameCounterIncrementor(gameCounter){
     if(gameCounter > 1){//avoid being re-prompted when first entering the loop
         console.log('==========================================================================');
-        console.log('Round Number: ' + gameCounter);
+        return ++gameCounter;
     }
     else{
-        gameCounter++;
+        return ++gameCounter;
     }
 }
 
@@ -112,7 +112,7 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
         }
 
         else {
-            gameCounterIncrementor(gameCounter);
+            console.log('Game Number: ' + gameCounter);
             computerSelection = getComputerChoice();
             playerSelection = getPlayerChoice();
             
@@ -142,6 +142,7 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
             console.log('You chose: ' + playerSelection);
             console.log('The computer chose: ' + computerSelection);
             console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
+            gameCounter = gameCounterIncrementor(gameCounter);
         }
     }
 }
