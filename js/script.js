@@ -33,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
 
     while (true) {
         if (playerScore === 3) {
+            console.log('==========================================================================');
             console.log('Congragulations, you won!!!');
             console.log('Total number of games: ' + --gameCounter);
             console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
@@ -40,6 +41,7 @@ function playRound(playerSelection, computerSelection) {
         }
 
         else if (computerScore === 3) {
+            console.log('==========================================================================');
             console.log('Awww... better luck next time!');
             console.log('Total number of games: ' + --gameCounter);
             console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
