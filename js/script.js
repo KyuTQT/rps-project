@@ -34,17 +34,26 @@ function playRound(playerSelection, computerSelection) {
     while (true) {
         if (playerScore === 3) {
             console.log('Congragulations, you won!!!');
-            console.log('Final Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
-            break;
-        }
-        else if (computerScore === 3) {
-            console.log('Awww... better luck next time!');
-            console.log('Final Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+            console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
             break;
         }
 
-        else {
-            console.log('Round Number: ' + gameCounter);
+        else if (computerScore === 3) {
+            console.log('Awww... better luck next time!');
+            console.log('Total number of games:' + gameCounter);
+            console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
+            break;
+        }
+
+        else {//avoid being re-prompted when first entering the loop
+            if(gameCounter > 1){
+                computerSelection = getComputerChoice();
+                playerSelection = getPlayerChoice();
+                gameCounter++;
+                console.log('==========================================================================');
+                console.log('Round Number: ' + gameCounter);
+            }
+            
             //rock three conditions (win, lose, and draw)
             switch (playerSelection) {
                 case ('rock'):
@@ -54,7 +63,7 @@ function playRound(playerSelection, computerSelection) {
                             console.log('The computer chose: ' + computerSelection);
                             playerScore++;
                             console.log('You win!');
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
 
                         case ('paper'):
@@ -62,14 +71,14 @@ function playRound(playerSelection, computerSelection) {
                             console.log('The computer chose: ' + computerSelection);
                             computerScore++;
                             console.log('You lose!');
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
 
                         case ('rock'):
                             console.log('You chose: ' + playerSelection);
                             console.log('The computer chose: ' + computerSelection);
                             console.log(`It's a draw!`);
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
                     }
                 break;
@@ -82,14 +91,14 @@ function playRound(playerSelection, computerSelection) {
                             console.log('The computer chose: ' + computerSelection);
                             computerScore++;
                             console.log('You lose!');
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
 
                         case ('paper'):
                             console.log('You chose: ' + playerSelection);
                             console.log('The computer chose: ' + computerSelection);
                             console.log(`It's a draw!`);
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
 
                         case ('rock'):
@@ -97,7 +106,7 @@ function playRound(playerSelection, computerSelection) {
                             console.log('The computer chose: ' + computerSelection);
                             playerScore++;
                             console.log('You win!');
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
                     }
                 break;
@@ -109,7 +118,7 @@ function playRound(playerSelection, computerSelection) {
                             console.log('You chose: ' + playerSelection);
                             console.log('The computer chose: ' + computerSelection);
                             console.log(`It's a draw!`);
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
 
                         case ('paper'):
@@ -117,7 +126,7 @@ function playRound(playerSelection, computerSelection) {
                             console.log('The computer chose: ' + computerSelection);
                             playerScore++;
                             console.log('You win!');
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
 
                         case ('rock'):
@@ -125,15 +134,15 @@ function playRound(playerSelection, computerSelection) {
                             console.log('The computer chose: ' + computerSelection);
                             computerScore++;
                             console.log('You lose!');
-                            console.log('Current Scores:\n Player: ' + playerScore + '\nComputer: ' + computerScore);
+                            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
                             break;
                     }
                 break;
+
             }
-            computerSelection = getComputerChoice();
-            playerSelection = getPlayerChoice();
-            gameCounter++;
-            console.log('==========================================================================');
+            if(gameCounter === 1){//one time prompt to trigger the if block above for the remaining games
+                gameCounter++;
+            }
         }
     }
 }
