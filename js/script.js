@@ -25,4 +25,26 @@ function getPlayerChoice(){
         }
     }
 }
-console.log(getPlayerChoice());
+
+function playRound(playerSelection, computerSelection){
+    console.log (computerSelection);
+    //rock three conditions (win, lose, and draw)
+    switch(playerSelection){
+        case('rock'):
+        switch(computerSelection){
+            case('scissors'):
+            console.log('You win!');
+            break;
+
+            case('paper'):
+            console.log('You lose!');
+            break;
+
+            case('rock'):
+            console.log(`It's a draw!`);
+        }
+    }
+
+}
+
+playRound(getPlayerChoice(), getComputerChoice());
