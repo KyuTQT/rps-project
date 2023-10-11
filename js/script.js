@@ -11,8 +11,8 @@ let scissorsBtn = document.querySelector('.scissors');
 
 let playerScoretxt = document.querySelector('.playerScore');
 let computerScoretxt = document.querySelector('.computerScore');
-let roundNumber = document.querySelector('.scoreboard h1');
-let status = document.querySelector('.scoreboard h2');
+let roundNumber = document.querySelector('.round-status h1');
+let status = document.querySelector('.round-status h2');
 
 let playerImage = document.querySelector('.playerImage');
 let computerImage = document.querySelector('.computerImage');
