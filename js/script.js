@@ -1,3 +1,22 @@
+//global variables
+let playerScore = 0;
+let computerScore = 0;
+let gameCounter = 1;
+
+
+//Variables from the DOM tree
+let rockBtn = document.querySelector('.rock');
+let paperBtn = document.querySelector('.paper');
+let scissorsBtn = document.querySelector('.scissors');
+
+let playerScoretxt = document.querySelector('.playerScore');
+let computerScoretxt = document.querySelector('.computerScore');
+let roundNumber = document.querySelector('.scoreboard h1');
+let status = document.querySelector('.scoreboard h2');
+
+let playerImage = document.querySelector('.playerImage');
+let computerImage = document.querySelector('.computerImage');
+
 function getComputerChoice() {
     let rpsChoice = Math.floor(Math.random() * 3) + 1;
 
@@ -13,17 +32,17 @@ function getComputerChoice() {
 
 }
 
-function getPlayerChoice() {
-    let playerChoice;
-    while (true) {
-        playerChoice = prompt(`Please select one of the following: 'rock', 'paper', or 'scissors'?`, ' ');
-        playerChoice = playerChoice.toLowerCase();
+// function getPlayerChoice() {
+//     let playerChoice;
+//     while (true) {
+//         playerChoice = prompt(`Please select one of the following: 'rock', 'paper', or 'scissors'?`, ' ');
+//         playerChoice = playerChoice.toLowerCase();
 
-        if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-            return playerChoice;
-        }
-    }
-}
+//         if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
+//             return playerChoice;
+//         }
+//     }
+// }
 
 function endGameResult(playerScore, computerScore, gameCounter){
     console.log('==========================================================================');
@@ -100,9 +119,7 @@ function playerScissorsResultOption(computerSelection){//possible results for th
 function playRound(playerSelection = ' ', computerSelection = ' ') {
     console.log('==========================================================================');
     console.log("Play rock paper scissors against the totally fair computer!\nFirst to three wins!");
-    let playerScore = 0;
-    let computerScore = 0;
-    let gameCounter = 1;
+
     let didPlayerWin = 0;
 
     while (true) {
@@ -146,11 +163,3 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
         }
     }
 }
-
-playRound();
-
-while (confirm('Play again?') === true){
-    playRound();
-}
-
-console.log("Thank you for playing and enjoy your day!");
