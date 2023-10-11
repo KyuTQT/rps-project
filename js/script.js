@@ -106,7 +106,7 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
     let didPlayerWin = 0;
 
     while (true) {
-        if (playerScore === 3 || computerScore === 3) {
+        if (playerScore === 5 || computerScore === 5) {
             endGameResult(playerScore, computerScore, gameCounter);
             break;
         }
