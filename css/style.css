@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    background-color: cornflowerblue;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 100px;
+    border-style: solid;
+    border-color: midnightblue;
+}
+.round-status h1{
+    margin-bottom: 10px;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.gameplay{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex: 1;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
