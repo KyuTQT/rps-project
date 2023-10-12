@@ -54,6 +54,7 @@ button:disabled{
     display: flex;
     justify-content: center;
     gap: 100px;
+    margin: 20px;
 }
 
 #playerImage, #computerImage{
