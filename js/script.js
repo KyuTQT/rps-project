@@ -35,40 +35,39 @@ scissorsBtn.addEventListener('click', function(){
 
 function playRound(playerSelection) {
     let didPlayerWin = 0;
+    roundNumber.textContent = `Round# ${gameCounter}`;
+    computerSelection = getComputerChoice();
+
+    switch (playerSelection) {
+        case ('rock'):
+            didPlayerWin = playerRockOptionResult(computerSelection);
+            break;
+
+        case ('paper'):
+            didPlayerWin = playerPaperResultOption(computerSelection);
+            break;
+
+        case ('scissors'):
+            didPlayerWin = playerScissorsResultOption(computerSelection);
+            break;
+    }
+
+    if (didPlayerWin === 0) { }
+    else if (didPlayerWin === 1) {
+        playerScore++;
+    }
+    else {
+        computerScore++;
+    }
+
+    playerScoretxt.textContent = `Your Score: ${playerScore}`;
+    computerScoretxt.textContent = `Computer Score: ${computerScore}`;
+    gameCounter = ++gameCounter;
+
     if (playerScore === 5 || computerScore === 5) {
         endGameResult(playerScore);
     }
 
-    else {
-        roundNumber.textContent = `Round# ${gameCounter}`;
-        computerSelection = getComputerChoice();
-
-        switch (playerSelection) {
-            case ('rock'):
-                didPlayerWin = playerRockOptionResult(computerSelection);
-                break;
-
-            case ('paper'):
-                didPlayerWin = playerPaperResultOption(computerSelection);
-                break;
-
-            case ('scissors'):
-                didPlayerWin = playerScissorsResultOption(computerSelection);
-                break;
-        }
-
-        if (didPlayerWin === 0) { }
-        else if (didPlayerWin === 1) {
-            playerScore++;
-        }
-        else {
-            computerScore++;
-        }
-
-        playerScoretxt.textContent = `Your Score: ${playerScore}`;
-        computerScoretxt.textContent = `Computer Score: ${computerScore}`;
-        gameCounter = ++gameCounter;
-    }
 }
 
 
