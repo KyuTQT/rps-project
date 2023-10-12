@@ -30,51 +30,43 @@ scissorsBtn.addEventListener('click', function(){
 })
 
 
-function playRound(playerSelection = ' ', computerSelection = ' ') {
-    console.log('==========================================================================');
-    console.log("Play rock paper scissors against the totally fair computer!\nFirst to three wins!");
-
+function playRound() {
     let didPlayerWin = 0;
+    if (playerScore === 5 || computerScore === 5) {
+        endGameResult(playerScore, computerScore, gameCounter);
+    }
 
-    while (true) {
-        if (playerScore === 5 || computerScore === 5) {
-            endGameResult(playerScore, computerScore, gameCounter);
-            break;
+    else {
+        roundNumber.textContent(`Round# ${gameCounter}`);
+        computerSelection = getComputerChoice();
+        playerSelection = getPlayerChoice();
+
+
+        switch (playerSelection) {
+            case ('rock'):
+                didPlayerWin = playerRockOptionResult(computerSelection);
+                break;
+
+            case ('paper'):
+                didPlayerWin = playerPaperResultOption(computerSelection);
+                break;
+
+            case ('scissors'):
+                didPlayerWin = playerScissorsResultOption(computerSelection);
+                break;
         }
 
+        if (didPlayerWin === 0) { }
+        else if (didPlayerWin === 1) {
+            playerScore++;
+        }
         else {
-            console.log('Game Number: ' + gameCounter);
-            computerSelection = getComputerChoice();
-            playerSelection = getPlayerChoice();
-            
-            
-            switch (playerSelection) {
-                case ('rock'):
-                    didPlayerWin = playerRockOptionResult(computerSelection);
-                break;
-
-                case ('paper'):
-                    didPlayerWin = playerPaperResultOption(computerSelection);
-                break;
-
-                case ('scissors'):
-                    didPlayerWin = playerScissorsResultOption(computerSelection);
-                break;
-            }
-
-            if(didPlayerWin === 0){}
-            else if(didPlayerWin === 1){
-                playerScore++;
-            }
-            else{
-                computerScore++;
-            }
-
-            console.log('You chose: ' + playerSelection);
-            console.log('The computer chose: ' + computerSelection);
-            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-            gameCounter = gameCounterIncrementor(gameCounter);
+            computerScore++;
         }
+
+        playerScoretxt.textContent(`Your Score: ${playerScore}`);
+        computerScoretxt.textContent(`Computer Score: ${computerScore}`);
+        gameCounter = gameCounterIncrementor(gameCounter);
     }
 }
 
@@ -82,7 +74,6 @@ function playRound(playerSelection = ' ', computerSelection = ' ') {
 
 function getComputerChoice() {
     let rpsChoice = Math.floor(Math.random() * 3) + 1;
-
     if (rpsChoice === 1) {
         return 'rock';
     }
@@ -94,18 +85,6 @@ function getComputerChoice() {
     }
 
 }
-
-// function getPlayerChoice() {
-//     let playerChoice;
-//     while (true) {
-//         playerChoice = prompt(`Please select one of the following: 'rock', 'paper', or 'scissors'?`, ' ');
-//         playerChoice = playerChoice.toLowerCase();
-
-//         if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-//             return playerChoice;
-//         }
-//     }
-// }
 
 function endGameResult(playerScore, computerScore, gameCounter){
     console.log('==========================================================================');
