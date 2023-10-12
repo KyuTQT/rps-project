@@ -40,7 +40,7 @@ function playRound(playerSelection) {
     }
 
     else {
-        roundNumber.textContent(`Round# ${gameCounter}`);
+        roundNumber.textContent = `Round# ${gameCounter}`;
         computerSelection = getComputerChoice();
 
         switch (playerSelection) {
@@ -65,8 +65,8 @@ function playRound(playerSelection) {
             computerScore++;
         }
 
-        playerScoretxt.textContent(`Your Score: ${playerScore}`);
-        computerScoretxt.textContent(`Computer Score: ${computerScore}`);
+        playerScoretxt.textContent = `Your Score: ${playerScore}`;
+        computerScoretxt.textContent = `Computer Score: ${computerScore}`;
         gameCounter = ++gameCounter;
     }
 }
@@ -92,10 +92,10 @@ function getComputerChoice() {
 
 function endGameResult(playerScore){
     if(playerScore === 5){
-        playerStatus.textContent(`You won!`);
+        playerStatus.textContent = `You won!`;
     }
     else{
-        playerStatus.textContent(`You Lose!`);
+        playerStatus.textContent = `You Lose!`;
     }
 }
 
