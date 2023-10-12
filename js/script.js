@@ -14,8 +14,71 @@ let computerScoretxt = document.querySelector('.computerScore');
 let roundNumber = document.querySelector('.round-status h1');
 let status = document.querySelector('.round-status h2');
 
-let playerImage = document.querySelector('.playerImage');
-let computerImage = document.querySelector('.computerImage');
+let playerImage = document.querySelector('#playerImage');
+let computerImage = document.querySelector('#computerImage');
+
+rockBtn.addEventListener('click', function(){
+    playerImage.src = './img/rock.png';
+})
+
+paperBtn.addEventListener('click', function(){
+    playerImage.src = './img/paper.png';
+})
+
+scissorsBtn.addEventListener('click', function(){
+    playerImage.src = './img/scissors.png';
+})
+
+
+function playRound(playerSelection = ' ', computerSelection = ' ') {
+    console.log('==========================================================================');
+    console.log("Play rock paper scissors against the totally fair computer!\nFirst to three wins!");
+
+    let didPlayerWin = 0;
+
+    while (true) {
+        if (playerScore === 5 || computerScore === 5) {
+            endGameResult(playerScore, computerScore, gameCounter);
+            break;
+        }
+
+        else {
+            console.log('Game Number: ' + gameCounter);
+            computerSelection = getComputerChoice();
+            playerSelection = getPlayerChoice();
+            
+            
+            switch (playerSelection) {
+                case ('rock'):
+                    didPlayerWin = playerRockOptionResult(computerSelection);
+                break;
+
+                case ('paper'):
+                    didPlayerWin = playerPaperResultOption(computerSelection);
+                break;
+
+                case ('scissors'):
+                    didPlayerWin = playerScissorsResultOption(computerSelection);
+                break;
+            }
+
+            if(didPlayerWin === 0){}
+            else if(didPlayerWin === 1){
+                playerScore++;
+            }
+            else{
+                computerScore++;
+            }
+
+            console.log('You chose: ' + playerSelection);
+            console.log('The computer chose: ' + computerSelection);
+            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
+            gameCounter = gameCounterIncrementor(gameCounter);
+        }
+    }
+}
+
+
 
 function getComputerChoice() {
     let rpsChoice = Math.floor(Math.random() * 3) + 1;
@@ -116,50 +179,3 @@ function playerScissorsResultOption(computerSelection){//possible results for th
     }
 }
 
-function playRound(playerSelection = ' ', computerSelection = ' ') {
-    console.log('==========================================================================');
-    console.log("Play rock paper scissors against the totally fair computer!\nFirst to three wins!");
-
-    let didPlayerWin = 0;
-
-    while (true) {
-        if (playerScore === 5 || computerScore === 5) {
-            endGameResult(playerScore, computerScore, gameCounter);
-            break;
-        }
-
-        else {
-            console.log('Game Number: ' + gameCounter);
-            computerSelection = getComputerChoice();
-            playerSelection = getPlayerChoice();
-            
-            
-            switch (playerSelection) {
-                case ('rock'):
-                    didPlayerWin = playerRockOptionResult(computerSelection);
-                break;
-
-                case ('paper'):
-                    didPlayerWin = playerPaperResultOption(computerSelection);
-                break;
-
-                case ('scissors'):
-                    didPlayerWin = playerScissorsResultOption(computerSelection);
-                break;
-            }
-
-            if(didPlayerWin === 0){}
-            else if(didPlayerWin === 1){
-                playerScore++;
-            }
-            else{
-                computerScore++;
-            }
-
-            console.log('You chose: ' + playerSelection);
-            console.log('The computer chose: ' + computerSelection);
-            console.log('Current Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
-            gameCounter = gameCounterIncrementor(gameCounter);
-        }
-    }
-}
