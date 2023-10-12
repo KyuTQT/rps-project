@@ -19,17 +19,17 @@ let computerImage = document.querySelector('#computerImage');
 
 rockBtn.addEventListener('click', function(){
     playerImage.src = './img/rock.png';
-    playerSelection('rock');
+    playRound('rock');
 })
 
 paperBtn.addEventListener('click', function(){
     playerImage.src = './img/paper.png';
-    playerSelection('paper');
+    playRound('paper');
 })
 
 scissorsBtn.addEventListener('click', function(){
     playerImage.src = './img/scissors.png';
-    playerSelection('scissors');
+    playRound('scissors');
 })
 
 
