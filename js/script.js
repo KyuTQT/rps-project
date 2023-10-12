@@ -76,12 +76,15 @@ function playRound(playerSelection) {
 function getComputerChoice() {
     let rpsChoice = Math.floor(Math.random() * 3) + 1;
     if (rpsChoice === 1) {
+        computerImage.src = './img/rock.png';
         return 'rock';
     }
     else if (rpsChoice === 2) {
+        computerImage.src = './img/paper.png';
         return 'paper';
     }
     else {
+        computerImage.src = './img/scissors.png';
         return 'scissors';
     }
 
