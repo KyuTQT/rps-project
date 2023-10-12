@@ -116,9 +116,11 @@ function getComputerChoice() {
 function endGameResult(playerScore){
     if(playerScore === 5){
         playerStatus.textContent = `You Won!`;
+        playerStatus.style.color = 'green';
     }
     else{
         playerStatus.textContent = `You Lose!`;
+        playerStatus.style.color = 'red';
     }
 }
 
