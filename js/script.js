@@ -84,13 +84,7 @@ function playRound(playerSelection) {
     computerScoretxt.textContent = `Computer Score: ${computerScore}`;
     gameCounter = ++gameCounter;
 
-    if (playerScore === 5 || computerScore === 5) {
-        rockBtn.style.display = 'none';
-        paperBtn.style.display = 'none';
-        scissorsBtn.style.display = 'none';
-        playAgainBtn.style.display = 'block';
-        endGameResult(playerScore);
-    }
+    endGameResult();
 
 }
 
@@ -113,14 +107,22 @@ function getComputerChoice() {
 
 }
 
-function endGameResult(playerScore){
-    if(playerScore === 5){
-        playerStatus.textContent = `You Won!`;
-        playerStatus.style.color = 'green';
-    }
-    else{
-        playerStatus.textContent = `You Lose!`;
-        playerStatus.style.color = 'red';
+function endGameResult(){
+    if(playerScore === 5 || computerScore === 5){
+        rockBtn.style.display = 'none';
+        paperBtn.style.display = 'none';
+        scissorsBtn.style.display = 'none';
+        playAgainBtn.style.display = 'block';
+
+        if(playerScore > computerScore){
+            playerStatus.textContent = `You Won!`;
+            playerStatus.style.color = 'green';
+        }
+        else{
+            playerStatus.textContent = `You Lose!`;
+            playerStatus.style.color = 'red';
+        }
+        
     }
 }
 
