@@ -33,6 +33,25 @@ scissorsBtn.addEventListener('click', function(){
     playRound('scissors');
 })
 
+playAgainBtn.addEventListener('click', function(){
+    rockBtn.style.display = 'block';
+    paperBtn.style.display = 'block';
+    scissorsBtn.style.display = 'block';
+    playAgainBtn.style.display = 'none';
+
+    playerScore = 0;
+    computerScore = 0;
+    gameCounter = 1;
+    roundNumber.textContent = `Round# ${gameCounter}`;
+    playerScoretxt.textContent = `Your Score: ${playerScore}`;
+    computerScoretxt.textContent = `Computer Score: ${computerScore}`;
+    playerStatus.textContent = '';
+    playerImage.style.backgroundColor = 'transparent';
+    computerImage.style.backgroundColor = 'transparent';
+    playerImage.src = './img/rps full.png';
+    computerImage.src = './img/rps full.png';
+})
+
 
 function playRound(playerSelection) {
     let didPlayerWin = 0;
