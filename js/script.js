@@ -115,7 +115,7 @@ function getComputerChoice() {
 
 function endGameResult(playerScore){
     if(playerScore === 5){
-        playerStatus.textContent = `You won!`;
+        playerStatus.textContent = `You Won!`;
     }
     else{
         playerStatus.textContent = `You Lose!`;
