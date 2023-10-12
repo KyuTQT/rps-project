@@ -12,7 +12,7 @@ let scissorsBtn = document.querySelector('.scissors');
 let playerScoretxt = document.querySelector('.playerScore');
 let computerScoretxt = document.querySelector('.computerScore');
 let roundNumber = document.querySelector('.round-status h1');
-let status = document.querySelector('.round-status h2');
+let playerStatus = document.querySelector('.round-status h2');
 
 let playerImage = document.querySelector('#playerImage');
 let computerImage = document.querySelector('#computerImage');
@@ -86,16 +86,13 @@ function getComputerChoice() {
 
 }
 
-function endGameResult(playerScore, computerScore, gameCounter){
-    console.log('==========================================================================');
-    if(playerScore === 3){
-        console.log('Congragulations, you won!!!');
+function endGameResult(playerScore){
+    if(playerScore === 5){
+        playerStatus.textContent(`You won!`);
     }
     else{
-        console.log('Awww... better luck next time!');
+        playerStatus.textContent(`You Lose!`);
     }
-    console.log('Total number of games: ' + --gameCounter);
-    console.log('Final Scores:\n  Player: ' + playerScore + '\n  Computer: ' + computerScore);
 }
 
 function gameCounterIncrementor(gameCounter){
@@ -108,7 +105,7 @@ function gameCounterIncrementor(gameCounter){
     }
 }
 
-function playerRockOptionResult(computerSelection){//possible results for the player picking rock
+function playerRockOptionResult(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
             console.log('You win!');
@@ -124,7 +121,7 @@ function playerRockOptionResult(computerSelection){//possible results for the pl
     }
 }
 
-function playerPaperResultOption(computerSelection){//possible results for the player picking paper
+function playerPaperResultOption(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
             console.log('You lose!');
@@ -140,7 +137,7 @@ function playerPaperResultOption(computerSelection){//possible results for the p
     }
 }
 
-function playerScissorsResultOption(computerSelection){//possible results for the player picking scissors
+function playerScissorsResultOption(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
             console.log(`It's a draw!`);
