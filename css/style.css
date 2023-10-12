@@ -21,6 +21,11 @@ button{
     font-size: 30px;
     text-align: center;
 }
+
+button:hover{
+    cursor: pointer;
+}
+
 .round-status h1{
     margin-bottom: 10px;
 }
