@@ -47,6 +47,7 @@ button:disabled{
     align-items: center;
     align-content: center;
     flex: 1;
+    margin: 20px;
 }
 
 .buttons{
@@ -55,3 +56,13 @@ button:disabled{
     gap: 100px;
 }
 
+#playerImage, #computerImage{
+    margin: 20px;
+    border-radius: 20px;
+
+    /* Losing Color */
+    /* background-color: rgb(218, 101, 101); */ 
+
+    /* Winning Color */
+    /* background-color: rgb(115, 184, 115); */
+}
