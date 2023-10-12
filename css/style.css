@@ -9,6 +9,24 @@ body{
     flex-direction: column;
 }
 
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 40px;
+}
+
+h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 button{
     background-color: cornflowerblue;
     padding: 20px;
