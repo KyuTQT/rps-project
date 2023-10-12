@@ -8,6 +8,7 @@ let gameCounter = 1;
 let rockBtn = document.querySelector('.rock');
 let paperBtn = document.querySelector('.paper');
 let scissorsBtn = document.querySelector('.scissors');
+let playAgainBtn = document.querySelector('.retry');
 
 let playerScoretxt = document.querySelector('.playerScore');
 let computerScoretxt = document.querySelector('.computerScore');
@@ -65,9 +66,10 @@ function playRound(playerSelection) {
     gameCounter = ++gameCounter;
 
     if (playerScore === 5 || computerScore === 5) {
-        rockBtn.disabled = true;
-        paperBtn.disabled = true;
-        scissorsBtn.disabled = true;
+        rockBtn.style.display = 'none';
+        paperBtn.style.display = 'none';
+        scissorsBtn.style.display = 'none';
+        playAgainBtn.style.display = 'block';
         endGameResult(playerScore);
     }
 

@@ -21,6 +21,10 @@ button{
     font-size: 30px;
     text-align: center;
 }
+.retry{
+    width: auto;
+
+}
 
 button:hover{
     cursor: pointer;
