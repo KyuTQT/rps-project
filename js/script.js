@@ -104,15 +104,12 @@ function endGameResult(playerScore){
 function playerRockOptionResult(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
-            console.log('You win!');
             return 1;
 
         case ('paper'):
-            console.log('You lose!');
             return 2;
 
         case ('rock'):
-            console.log(`It's a draw!`);
             return 0;
     }
 }
@@ -120,15 +117,12 @@ function playerRockOptionResult(computerSelection){
 function playerPaperResultOption(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
-            console.log('You lose!');
             return 2;
 
         case ('paper'):
-            console.log(`It's a draw!`);
             return 0;
 
         case ('rock'):
-            console.log('You win!');
             return 1;
     }
 }
@@ -136,17 +130,14 @@ function playerPaperResultOption(computerSelection){
 function playerScissorsResultOption(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
-            console.log(`It's a draw!`);
             return 0;
 
 
         case ('paper'):
-            console.log('You win!');
             return 1;
 
 
         case ('rock'):
-            console.log('You lose!');
             return 2;
     }
 }
