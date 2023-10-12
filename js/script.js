@@ -126,21 +126,33 @@ function endGameResult(){
     }
 }
 
+function playerWinsStyle(){
+    playerImage.style.backgroundColor = "rgb(115, 184, 115)";
+    computerImage.style.backgroundColor = "rgb(218, 101, 101)";
+}
+
+function playerLoseStyle(){
+    playerImage.style.backgroundColor = "rgb(218, 101, 101)";
+    computerImage.style.backgroundColor = "rgb(115, 184, 115)";
+}
+
+function playerDrawStyle(){
+    playerImage.style.backgroundColor = 'transparent';
+    computerImage.style.backgroundColor = 'transparent';
+}
+
 function playerRockOptionResult(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
-            playerImage.style.backgroundColor = "rgb(115, 184, 115)";
-            computerImage.style.backgroundColor = "rgb(218, 101, 101)";
+            playerWinsStyle();
             return 1;
 
         case ('paper'):
-            playerImage.style.backgroundColor = "rgb(218, 101, 101)";
-            computerImage.style.backgroundColor = "rgb(115, 184, 115)";
+            playerLoseStyle();
             return 2;
 
         case ('rock'):
-            playerImage.style.backgroundColor = 'transparent';
-            computerImage.style.backgroundColor = 'transparent';
+            playerDrawStyle();
             return 0;
     }
 }
@@ -148,18 +160,15 @@ function playerRockOptionResult(computerSelection){
 function playerPaperResultOption(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
-            playerImage.style.backgroundColor = "rgb(218, 101, 101)";
-            computerImage.style.backgroundColor = "rgb(115, 184, 115)";
+            playerLoseStyle();
             return 2;
 
         case ('paper'):
-            playerImage.style.backgroundColor = 'transparent';
-            computerImage.style.backgroundColor = 'transparent';
+            playerDrawStyle();
             return 0;
 
         case ('rock'):
-            playerImage.style.backgroundColor = "rgb(115, 184, 115)";
-            computerImage.style.backgroundColor = "rgb(218, 101, 101)";
+            playerWinsStyle();
             return 1;
     }
 }
@@ -167,20 +176,17 @@ function playerPaperResultOption(computerSelection){
 function playerScissorsResultOption(computerSelection){
     switch (computerSelection) {
         case ('scissors'):
-            playerImage.style.backgroundColor = 'transparent';
-            computerImage.style.backgroundColor = 'transparent';
+            playerDrawStyle();
             return 0;
 
 
         case ('paper'):
-            playerImage.style.backgroundColor = "rgb(115, 184, 115)";
-            computerImage.style.backgroundColor = "rgb(218, 101, 101)";
+            playerWinsStyle();
             return 1;
 
 
         case ('rock'):
-            playerImage.style.backgroundColor = "rgb(218, 101, 101)";
-            computerImage.style.backgroundColor = "rgb(115, 184, 115)";
+            playerLoseStyle();
             return 2;
     }
 }
