@@ -19,18 +19,21 @@ let computerImage = document.querySelector('#computerImage');
 
 rockBtn.addEventListener('click', function(){
     playerImage.src = './img/rock.png';
+    playerSelection('rock');
 })
 
 paperBtn.addEventListener('click', function(){
     playerImage.src = './img/paper.png';
+    playerSelection('paper');
 })
 
 scissorsBtn.addEventListener('click', function(){
     playerImage.src = './img/scissors.png';
+    playerSelection('scissors');
 })
 
 
-function playRound() {
+function playRound(playerSelection) {
     let didPlayerWin = 0;
     if (playerScore === 5 || computerScore === 5) {
         endGameResult(playerScore);
@@ -39,8 +42,6 @@ function playRound() {
     else {
         roundNumber.textContent(`Round# ${gameCounter}`);
         computerSelection = getComputerChoice();
-        playerSelection = getPlayerChoice();
-
 
         switch (playerSelection) {
             case ('rock'):
