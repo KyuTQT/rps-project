@@ -24,6 +24,11 @@ button{
 
 button:hover{
     cursor: pointer;
+    background-color: rgb(71, 103, 163);
+}
+button:disabled{
+    background-color: dimgray;
+    cursor: default;
 }
 
 .round-status h1{
