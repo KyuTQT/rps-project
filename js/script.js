@@ -33,7 +33,7 @@ scissorsBtn.addEventListener('click', function(){
 function playRound() {
     let didPlayerWin = 0;
     if (playerScore === 5 || computerScore === 5) {
-        endGameResult(playerScore, computerScore, gameCounter);
+        endGameResult(playerScore);
     }
 
     else {
