@@ -66,7 +66,7 @@ function playRound() {
 
         playerScoretxt.textContent(`Your Score: ${playerScore}`);
         computerScoretxt.textContent(`Computer Score: ${computerScore}`);
-        gameCounter = gameCounterIncrementor(gameCounter);
+        gameCounter = ++gameCounter;
     }
 }
 
@@ -92,16 +92,6 @@ function endGameResult(playerScore){
     }
     else{
         playerStatus.textContent(`You Lose!`);
-    }
-}
-
-function gameCounterIncrementor(gameCounter){
-    if(gameCounter > 1){//avoid being re-prompted when first entering the loop
-        console.log('==========================================================================');
-        return ++gameCounter;
-    }
-    else{
-        return ++gameCounter;
     }
 }
 
