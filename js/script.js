@@ -65,6 +65,9 @@ function playRound(playerSelection) {
     gameCounter = ++gameCounter;
 
     if (playerScore === 5 || computerScore === 5) {
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
         endGameResult(playerScore);
     }
 
